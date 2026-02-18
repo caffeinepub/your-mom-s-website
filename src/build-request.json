@@ -1,0 +1,96 @@
+{
+  "kind": "build_request",
+  "title": "Restyle joke site to early-2010s YouTube look with pink palette, animated creme heading, and photo banner",
+  "projectName": "your_mom’s_website",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "text": "Update the homepage layout and styling to mimic an early-2010s YouTube UI (nostalgic video-site feel) while keeping the site as a single-page joke experience.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Can you orient the ui to mimic that of early 2010’s YouTube"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The top-of-page header/navigation area visually resembles early-2010s YouTube (e.g., boxed/strip header, compact controls, and overall nostalgic spacing/typography), without changing the app into a multi-page site.",
+        "The existing joke interaction (show punchline / next joke) remains functional and prominent on the page.",
+        "No blue/purple-dominant theme is introduced."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add a cropped top banner image using a real-looking 2010s-era stock photo of an excited mom giving a thumbs up, and render it at the top of the page as a banner.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "an real stock image of an excited mom giving a thumbs up, from around the same decade as the 2010’s, is cropped as the banner on the top of the page."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new static image asset exists under frontend/public/assets/generated and is used as a full-width top banner.",
+        "The banner is visually cropped to a wide aspect ratio (banner-style) and sits at the top of the page above the main content.",
+        "The page loads without broken image links."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Change the main site heading styling so it is creme-colored and has a slow gloss/sheen animation that loops indefinitely.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Heading is in a creme color and is has a slow gloss animation that plays indefinitely."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The prominent on-page heading text remains exactly \"your_mom's_website\" and is rendered in a creme color.",
+        "A visible gloss/sheen effect animates across the heading continuously (indefinite loop) at a slow speed.",
+        "The animation does not block interaction and does not cause layout shift."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Update the global color theme to: lighter, vibrant pink page background; darker pink for foreground UI surfaces; white for most text; with an explicit exception that the footer's joke manufacturing text \"moms_of_ momland.inc\" and the joke copyright notes at the bottom of the page are not white.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "The background is lighter, more vibrant pink, the foreground ui is a darker pink, and any text is in white. (except for joke manufacturing “moms_of_ momland.inc” and joke copyright notes at the bottom of the page.)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Global background reads as a lighter, vibrant pink; primary UI surfaces (cards/containers/header surfaces) read as a darker pink.",
+        "Default text across the page renders as white on the pink UI.",
+        "The footer area includes \"moms_of_ momland.inc\" and joke copyright notes, and those specific texts are not white (but remain readable and consistent with the design)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Keep the application as a single-page joke website named exactly \"your_mom's_website\" (visible heading text), and keep existing joke interaction working.",
+    "Do not add blue/purple-dominant styling."
+  ],
+  "nonGoals": [
+    "No backend/Motoko changes.",
+    "No new authentication providers or third-party integrations.",
+    "No conversion to a multi-page video site or actual video upload/playback features."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Wide cropped stock-photo-style banner of an excited mom giving a thumbs up, 2010s-era look (excited-mom-thumbs-up-banner.dim_1600x400.png)"
+    ],
+    "edits": []
+  }
+}

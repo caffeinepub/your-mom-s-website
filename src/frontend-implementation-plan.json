@@ -1,0 +1,91 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Early-2010s YouTube-style pink restyle with animated creme heading and mom photo banner",
+  "requirements": [
+    {
+      "id": "REQ-5",
+      "summary": "Restyle the single-page homepage layout to evoke an early-2010s YouTube UI while keeping the joke interaction prominent and functional.",
+      "acceptanceCriteria": [
+        "The top-of-page header/navigation area visually resembles early-2010s YouTube (e.g., boxed/strip header, compact controls, and overall nostalgic spacing/typography), without changing the app into a multi-page site.",
+        "The existing joke interaction (show punchline / next joke) remains functional and prominent on the page.",
+        "No blue/purple-dominant theme is introduced."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update the top header area to a more early-2010s video-site layout (boxed strip, compact control cluster such as faux search/action items) while staying single-page; keep and visually prioritize the existing joke Card and the show/next interaction. Continue using shadcn-ui components already present (e.g., Button/Card/Badge) for consistent surfaces and controls; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Adjust global typography and spacing defaults to better match an early-2010s video-site feel (more utilitarian font stack and slightly tighter/boxier UI rhythm) without introducing blue/purple-dominant styling."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add and render a wide, cropped stock-photo-style banner image of an excited mom giving a thumbs up at the top of the page.",
+      "acceptanceCriteria": [
+        "A new static image asset exists under frontend/public/assets/generated and is used as a full-width top banner.",
+        "The banner is visually cropped to a wide aspect ratio (banner-style) and sits at the top of the page above the main content.",
+        "The page loads without broken image links."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/excited-mom-thumbs-up-banner.dim_1600x400.png",
+          "operation": "create",
+          "description": "Add the required generated static banner asset at frontend/public/assets/generated/excited-mom-thumbs-up-banner.dim_1600x400.png."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the new banner image frontend/public/assets/generated/excited-mom-thumbs-up-banner.dim_1600x400.png into the top of the page as a full-width, visually cropped banner above the main content (and above/around the header as required), ensuring no broken links and maintaining the single-page layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Make the main on-page heading creme-colored with a slow, looping gloss/sheen animation without affecting layout or interactions.",
+      "acceptanceCriteria": [
+        "The prominent on-page heading text remains exactly \"your_mom's_website\" and is rendered in a creme color.",
+        "A visible gloss/sheen effect animates across the heading continuously (indefinite loop) at a slow speed.",
+        "The animation does not block interaction and does not cause layout shift."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add a reusable heading gloss/sheen animation (keyframes + utility/class) designed to loop slowly and not cause layout shift; ensure the base heading color is creme and remains readable on the pink palette."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Apply the new creme + sheen styling to the prominent heading text that renders exactly \"your_mom's_website\" (ensure only styling changes, no text changes), and confirm the animation does not interfere with the joke interaction. If using any shadcn-ui typography patterns around headings, verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Switch the global theme to vibrant pink background, darker pink surfaces, and white default text, with explicit non-white footer manufacturing/copyright text.",
+      "acceptanceCriteria": [
+        "Global background reads as a lighter, vibrant pink; primary UI surfaces (cards/containers/header surfaces) read as a darker pink.",
+        "Default text across the page renders as white on the pink UI.",
+        "The footer area includes \"moms_of_ momland.inc\" and joke copyright notes, and those specific texts are not white (but remain readable and consistent with the design)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Replace the current warm orange/coral CSS variable theme with a vibrant pink palette: lighter vibrant pink for --background, darker pink for key surfaces (e.g., --card/--popover/--secondary), and set default text variables (e.g., --foreground, --card-foreground) to white; ensure no blue/purple-dominant colors are introduced."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Ensure key UI surfaces (header strip, cards/containers) read as darker pink and default text reads as white under the updated theme; add footer content including the exact text \"moms_of_ momland.inc\" and joke copyright notes, styling those specific footer texts to be non-white yet readable and consistent with the design. Continue using shadcn-ui components already present (Card/Badge/Button) for surfaces where applicable; verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

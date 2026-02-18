@@ -1,0 +1,5 @@
+{
+  "frontend/src/App.tsx": "Main application component featuring a single-page joke website with early-2010s YouTube-inspired layout, including a mom thumbs-up banner, compact header with faux search/controls, interactive joke rotation, and footer with manufacturing/copyright notes in non-white text.",
+  "frontend/src/index.css": "Global styles with vibrant pink OKLCH color system (lighter pink background, darker pink surfaces, white text), creme-colored heading with slow gloss animation, and footer text in non-white color; uses Arial font for 2010s aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Arial font family, minimal border radius (0.25rem), and custom color tokens for the vibrant pink theme including creme and footer text colors."
+}

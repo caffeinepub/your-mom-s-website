@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a joke website named “your_mom’s_website”.",
+  "architectural_notes": [
+    "Add a top banner area that supports a cropped stock-photo image (license/attribution considerations).",
+    "Implement an infinite, slow CSS gloss animation for the main heading text."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Wide cropped stock-photo-style banner of an excited mom giving a thumbs up, 2010s-era look (excited-mom-thumbs-up-banner.dim_1600x400.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-joke-website-whose-visible-site-name-is-exactly-your-mom-s-website-including-the-browser-tab-title-and-prominent-on-page-heading",
+      "title": "Create a single-page joke website whose visible site name is exactly “your_mom’s_website”, including the browser tab title and prominent on-page heading.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-playful-homepage-layout-that-clearly-reads-as-a-joke-site-e-g-punchy-tagline-a-short-paragraph-of-comedic-copy-and-a-call-to-action-button-that-triggers-a-harmless-joke-interaction",
+      "title": "Implement a playful homepage layout that clearly reads as a joke site (e.g., punchy tagline, a short paragraph of comedic copy, and a call-to-action button that triggers a harmless joke interaction).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-distinct-visual-theme-for-the-site-colors-typography-spacing-and-ui-styling-and-use-it-consistently-across-the-page-do-not-use-a-blue-purple-theme",
+      "title": "Apply a coherent, distinct visual theme for the site (colors, typography, spacing, and UI styling) and use it consistently across the page; do not use a blue/purple theme.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-images-to-the-project-under-frontend-public-assets-generated-and-render-them-on-the-homepage-as-part-of-the-visual-design",
+      "title": "Add the required generated images to the project under frontend/public/assets/generated and render them on the homepage as part of the visual design.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-homepage-layout-and-styling-to-mimic-an-early-2010s-youtube-ui-nostalgic-video-site-feel-while-keeping-the-site-as-a-single-page-joke-experience",
+      "title": "Update the homepage layout and styling to mimic an early-2010s YouTube UI (nostalgic video-site feel) while keeping the site as a single-page joke experience.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-cropped-top-banner-image-using-a-real-looking-2010s-era-stock-photo-of-an-excited-mom-giving-a-thumbs-up-and-render-it-at-the-top-of-the-page-as-a-banner",
+      "title": "Add a cropped top banner image using a real-looking 2010s-era stock photo of an excited mom giving a thumbs up, and render it at the top of the page as a banner.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-change-the-main-site-heading-styling-so-it-is-creme-colored-and-has-a-slow-gloss-sheen-animation-that-loops-indefinitely",
+      "title": "Change the main site heading styling so it is creme-colored and has a slow gloss/sheen animation that loops indefinitely.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-global-color-theme-to-lighter-vibrant-pink-page-background-darker-pink-for-foreground-ui-surfaces-white-for-most-text-with-an-explicit-exception-that-the-footer-s-joke-manufacturing-text-moms-of-momland-inc-and-the-joke-copyright-notes-at-the-bottom-of-the-page-are-not-white",
+      "title": "Update the global color theme to: lighter, vibrant pink page background; darker pink for foreground UI surfaces; white for most text; with an explicit exception that the footer's joke manufacturing text \"moms_of_ momland.inc\" and the joke copyright notes at the bottom of the page are not white.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a joke website with the name “your_mom’s_website”.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Update UI layout/styling to mimic early-2010s YouTube (nostalgic video-site UI feel).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add a top-of-page cropped banner using a real stock image of an excited mom giving a thumbs up (2010s-era vibe).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Set heading text color to creme and add a slow, indefinitely looping gloss animation.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Apply new color theme: lighter vibrant pink background, darker pink foreground UI, text in white except footer manufacturing/copyright notes.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "your_mom’s_website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
