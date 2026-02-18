@@ -78,7 +78,8 @@ export default {
                 xs: '0 1px 2px 0 rgba(0,0,0,0.05)'
             },
             fontFamily: {
-                sans: ['Arial', 'Helvetica', 'sans-serif'],
+                sans: ['Catamaran', 'Arial', 'Helvetica', 'sans-serif'],
+                display: ['Fredoka', 'Catamaran', 'Arial', 'sans-serif'],
             },
             keyframes: {
                 'accordion-down': {

@@ -1,12 +1,14 @@
 # Specification
 
 ## Summary
-**Goal:** Restyle the single-page joke homepage to a nostalgic early-2010s YouTube-like UI with a pink theme, a top photo banner, and an animated creme heading—while keeping the existing joke interaction intact.
+**Goal:** Refresh the single-page joke site with an intentionally low-res early-2010s aesthetic, Catull-like typography, an animated main heading, randomized “mom media” sidebar content, and a rickroll easter egg.
 
 **Planned changes:**
-- Update the homepage layout/styling to resemble an early-2010s YouTube header/navigation and overall spacing/typography (single-page only).
-- Add a full-width, wide-cropped banner image at the very top of the page using a 2010s-style stock photo of an excited mom giving a thumbs up.
-- Restyle the main heading text (exactly `your_mom's_website`) to be creme-colored with a slow, looping gloss/sheen animation.
-- Apply a global color theme: lighter vibrant pink background, darker pink UI surfaces, white default text; ensure the footer texts `moms_of_ momland.inc` and the joke copyright notes are not white.
+- Apply a subtle, consistent low-res/retro visual treatment across the page without reducing readability or breaking the existing pink theme, layout, banner, cards, or footer.
+- Update global typography to a Catull-style font (or a legally usable free substitute) and make the main heading use a more cartoonish display style that still fits the early-2010s vibe.
+- Change the on-page main header text to remove underscores (keep the browser tab title as “your_mom’s_website”) and animate each letter with a looping jump-and-squash effect without causing layout reflow.
+- Add an early-2010s-style sidebar/side column (stacking on mobile) containing small UI boxes with embedded mom-themed cooking/baking YouTube videos, randomized per visit from an internal list.
+- Add a matching sidebar section with small mom-article cards (title, snippet, source link), randomized per visit from an internal list, with links opening in a new tab using appropriate rel attributes.
+- Add a rickroll easter egg by making a single clearly identifiable word clickable to redirect to https://www.youtube.com/watch?v=dQw4w9WgXcQ.
 
-**User-visible outcome:** The homepage looks like an early-2010s video-site UI in a pink palette, shows a top banner photo, features a creme glossy-animated title, and the punchline/next-joke interaction continues to work as before.
+**User-visible outcome:** The page looks more intentionally retro and low-res, uses Catull-like typography, shows an animated underscore-free heading, includes a randomized sidebar of mom videos and articles, and contains a clickable word that rickrolls the user.

@@ -1,14 +1,15 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "Build a joke website named “your_mom’s_website”.",
   "architectural_notes": [
     "Add a top banner area that supports a cropped stock-photo image (license/attribution considerations).",
-    "Implement an infinite, slow CSS gloss animation for the main heading text."
+    "Implement an infinite, slow CSS gloss animation for the main heading text.",
+    "Catull is a licensed typeface; use a legally permitted Catull-like substitute (e.g., free web font) for the “older Google logo” feel.",
+    "Implement low-res/pixelated look via CSS techniques (filters/rendering settings) without breaking readability/accessibility."
   ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Wide cropped stock-photo-style banner of an excited mom giving a thumbs up, 2010s-era look (excited-mom-thumbs-up-banner.dim_1600x400.png)",
   "existing_features": [
     {
       "id": "feature-create-a-single-page-joke-website-whose-visible-site-name-is-exactly-your-mom-s-website-including-the-browser-tab-title-and-prominent-on-page-heading",
@@ -73,6 +74,54 @@
         "REQ-8"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-adjust-the-overall-visual-treatment-to-feel-intentionally-lower-resolution-early-2010s-by-applying-subtle-pixelated-low-res-styling-across-the-page-while-keeping-all-text-readable-and-the-site-fully-usable",
+      "title": "Adjust the overall visual treatment to feel intentionally lower-resolution / early-2010s by applying subtle pixelated/low-res styling across the page (while keeping all text readable and the site fully usable).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-global-typography-so-that-all-site-text-uses-a-catull-style-typeface-use-a-legally-usable-free-substitute-if-catull-cannot-be-embedded-and-update-the-main-heading-to-use-a-more-cartoonish-display-feel-while-still-fitting-the-early-2010s-aesthetic",
+      "title": "Update global typography so that all site text uses a Catull-style typeface (use a legally usable free substitute if Catull cannot be embedded), and update the main heading to use a more cartoonish display feel while still fitting the early-2010s aesthetic.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-change-the-displayed-main-header-text-to-remove-underscores-while-keeping-the-existing-browser-tab-title-as-your-mom-s-website-and-animate-the-header-so-each-letter-performs-a-small-cartoonish-jump-and-squash-loop-or-staggered-loop-without-impacting-layout-flow",
+      "title": "Change the displayed main header text to remove underscores (while keeping the existing browser tab title as “your_mom’s_website”), and animate the header so each letter performs a small cartoonish jump-and-squash loop (or staggered loop) without impacting layout flow.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-early-2010s-style-sidebar-area-with-small-ui-boxes-that-embed-mom-themed-cooking-baking-youtube-videos-the-selected-videos-must-be-randomized-so-different-visits-can-show-different-video-selections",
+      "title": "Add an early-2010s-style sidebar area with small UI boxes that embed mom-themed cooking/baking YouTube videos; the selected videos must be randomized so different visits can show different video selections.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-early-2010s-style-sidebar-area-with-small-ui-boxes-showing-mom-written-articles-title-short-snippet-source-link-the-selected-articles-must-be-randomized-so-different-visits-can-show-different-article-selections",
+      "title": "Add an early-2010s-style sidebar area with small UI boxes showing mom-written articles (title + short snippet + source link); the selected articles must be randomized so different visits can show different article selections.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-rickroll-easter-egg-a-specific-visible-word-on-the-page-must-be-clickable-and-redirect-the-user-to-rick-astley-s-never-gonna-give-you-up-on-youtube-https-www-youtube-com-watch-v-dqw4w9wgxcq",
+      "title": "Add a rickroll easter egg: a specific visible word on the page must be clickable and redirect the user to Rick Astley’s “Never Gonna Give You Up” on YouTube (https://www.youtube.com/watch?v=dQw4w9WgXcQ).",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -103,6 +152,42 @@
     {
       "id": "AR-5",
       "summary": "Apply new color theme: lighter vibrant pink background, darker pink foreground UI, text in white except footer manufacturing/copyright notes.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Adjust overall visual treatment to feel lower-resolution/early-2010s (e.g., pixelated/low-res styling where appropriate).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Update main header text to remove underscores and use a more cartoonish heading font, with per-letter jump/squash animation.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Switch global site typography to a Catull-style font (use a free substitute if Catull is not legally usable).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add sidebar UI boxes containing embedded mom-themed cooking/baking YouTube videos that are randomized and change between visits.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add sidebar UI boxes containing mom-written articles that are randomized and change between visits.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add a rickroll easter egg: a specific clickable word redirects to Rick Astley’s “Never Gonna Give You Up” on YouTube.",
       "reqIds": [],
       "status": "pending"
     }

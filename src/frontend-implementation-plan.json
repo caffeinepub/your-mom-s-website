@@ -1,89 +1,138 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Early-2010s YouTube-style pink restyle with animated creme heading and mom photo banner",
+  "title": "Retro low-res styling, Catull-like typography, animated header letters, randomized mom-media sidebar, and rickroll easter egg",
   "requirements": [
     {
-      "id": "REQ-5",
-      "summary": "Restyle the single-page homepage layout to evoke an early-2010s YouTube UI while keeping the joke interaction prominent and functional.",
+      "id": "REQ-9",
+      "summary": "Apply a consistent subtle low-res/early-2010s retro treatment across the single-page UI without harming readability or the existing pink theme.",
       "acceptanceCriteria": [
-        "The top-of-page header/navigation area visually resembles early-2010s YouTube (e.g., boxed/strip header, compact controls, and overall nostalgic spacing/typography), without changing the app into a multi-page site.",
-        "The existing joke interaction (show punchline / next joke) remains functional and prominent on the page.",
-        "No blue/purple-dominant theme is introduced."
+        "The page has a noticeably more low-res/retro treatment than the current version (e.g., pixelation on decorative elements, slightly aliased edges, and/or reduced-smoothness effects), without harming readability or layout stability.",
+        "The effect is applied consistently across the single-page experience and does not break the existing pink theme, banner, cards, or footer."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global retro/low-res utilities (e.g., subtle scanline/dither overlay via a non-interactive pseudo-element, slightly harsher/aliased decorative edges, and optional pixelated rendering for decorative images/icons only) while keeping text crisp/readable and preserving existing vibrant pink theme tokens and the footer non-white text exception."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Apply new retro utility classes at the app shell/root and on decorative assets (banner/mascot/badge images) to ensure the low-res treatment is visible but does not affect layout stability or text readability. Use existing shadcn-ui composition (Card/Badge/Button) only; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Set global Catull-style typography (via a free substitute) and update the main heading typography to a more cartoonish display style that still fits the early-2010s aesthetic.",
+      "acceptanceCriteria": [
+        "Body text, headings, and UI text render using the chosen Catull-style font (or a clearly similar free substitute) across the app.",
+        "The main header text visually reads as more cartoonish than before, while remaining legible at small sizes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add font loading for a legally usable free Catull-style substitute (site-wide) plus a cartoonish display font (for the main heading) using standard web font loading in the HTML head, without changing the existing tab title."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global typography to use the chosen Catull-style substitute for body/headings and a separate display font for the main header (via CSS variables and/or Tailwind base styles), ensuring legibility and preserving the existing pink theme and footer styling exception."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind fontFamily configuration to expose the new body and display fonts as utilities/classes, keeping existing theme tokens intact."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Update the on-page main header text to remove underscores and animate each letter with a looping cartoonish jump-and-squash without reflow; keep browser tab title unchanged.",
+      "acceptanceCriteria": [
+        "The on-page header no longer shows underscores in the displayed text.",
+        "The browser tab title remains “your_mom’s_website”.",
+        "Each character in the displayed header has a visible jump/squash animation (can be staggered per-letter) that loops smoothly and does not cause the header to reflow or shift surrounding elements."
       ],
       "file_operations": [
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Update the top header area to a more early-2010s video-site layout (boxed strip, compact control cluster such as faux search/action items) while staying single-page; keep and visually prioritize the existing joke Card and the show/next interaction. Continue using shadcn-ui components already present (e.g., Button/Card/Badge) for consistent surfaces and controls; verify the component's usage instructions before implementing."
+          "description": "Replace the header H1 text rendering with a per-character span layout (underscores removed in displayed text) using inline-flex and fixed line-height to prevent layout shift; apply staggered animation delays per character. Use existing shadcn-ui composition only; verify the component's usage instructions before implementing."
         },
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Adjust global typography and spacing defaults to better match an early-2010s video-site feel (more utilitarian font stack and slightly tighter/boxier UI rhythm) without introducing blue/purple-dominant styling."
+          "description": "Add keyframes and utility/classes for the per-letter jump-and-squash loop (transform-only animation to avoid reflow), plus a wrapper style that preserves the existing heading gloss effect while allowing the new display font."
         }
       ]
     },
     {
-      "id": "REQ-6",
-      "summary": "Add and render a wide, cropped stock-photo-style banner image of an excited mom giving a thumbs up at the top of the page.",
+      "id": "REQ-12",
+      "summary": "Add an early-2010s-style sidebar section with multiple small boxes embedding randomized mom-themed cooking/baking YouTube videos using a safe browser-only approach.",
       "acceptanceCriteria": [
-        "A new static image asset exists under frontend/public/assets/generated and is used as a full-width top banner.",
-        "The banner is visually cropped to a wide aspect ratio (banner-style) and sits at the top of the page above the main content.",
-        "The page loads without broken image links."
+        "A sidebar (or side column on desktop, stacked section on mobile) contains multiple small boxes with embedded YouTube videos related to moms cooking/baking.",
+        "On page load, the set/order of videos is randomized from an internal list so that different visits can show different selections.",
+        "The embeds load safely in the browser (no backend required) and the page remains a single-page experience."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/excited-mom-thumbs-up-banner.dim_1600x400.png",
+          "path": "frontend/src/lib/momMedia.ts",
           "operation": "create",
-          "description": "Add the required generated static banner asset at frontend/public/assets/generated/excited-mom-thumbs-up-banner.dim_1600x400.png."
+          "description": "Add a curated internal list of mom-themed cooking/baking YouTube video IDs/URLs and helper utilities to select and shuffle a subset per visit (no runtime scraping; internal list only)."
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Wire the new banner image frontend/public/assets/generated/excited-mom-thumbs-up-banner.dim_1600x400.png into the top of the page as a full-width, visually cropped banner above the main content (and above/around the header as required), ensuring no broken links and maintaining the single-page layout."
+          "description": "Adjust the main content layout to include a responsive sidebar (desktop side column, mobile stacked) and render multiple video embed cards selected randomly on initial load. Build the small UI boxes using shadcn-ui Card components; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add retro sidebar/card styling helpers to evoke early-2010s UI boxes (e.g., tighter borders, subtle shadows, and slight ‘web 2.0’ chrome) while preserving the existing vibrant pink theme."
         }
       ]
     },
     {
-      "id": "REQ-7",
-      "summary": "Make the main on-page heading creme-colored with a slow, looping gloss/sheen animation without affecting layout or interactions.",
+      "id": "REQ-13",
+      "summary": "Add an early-2010s-style sidebar section with multiple small randomized mom-written article cards (title, snippet, source link) opening safely in new tabs.",
       "acceptanceCriteria": [
-        "The prominent on-page heading text remains exactly \"your_mom's_website\" and is rendered in a creme color.",
-        "A visible gloss/sheen effect animates across the heading continuously (indefinite loop) at a slow speed.",
-        "The animation does not block interaction and does not cause layout shift."
+        "A sidebar section contains multiple small article cards/boxes with a title, short snippet, and an outbound link.",
+        "On page load, the set/order of articles is randomized from an internal list so that different visits can show different selections.",
+        "Article links open in a new tab with appropriate rel attributes (noopener/noreferrer)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
+          "path": "frontend/src/lib/momMedia.ts",
           "operation": "modify",
-          "description": "Add a reusable heading gloss/sheen animation (keyframes + utility/class) designed to loop slowly and not cause layout shift; ensure the base heading color is creme and remains readable on the pink palette."
+          "description": "Add a curated internal list of mom-written articles (title/snippet/url/source label) and reuse the same shuffle/subset helper for randomized selection per visit."
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Apply the new creme + sheen styling to the prominent heading text that renders exactly \"your_mom's_website\" (ensure only styling changes, no text changes), and confirm the animation does not interfere with the joke interaction. If using any shadcn-ui typography patterns around headings, verify the component's usage instructions before implementing."
+          "description": "Render a second sidebar section for article cards (title + snippet + outbound link) using shadcn-ui Card components, ensuring links open in a new tab with rel=\"noopener noreferrer\". Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
-      "id": "REQ-8",
-      "summary": "Switch the global theme to vibrant pink background, darker pink surfaces, and white default text, with explicit non-white footer manufacturing/copyright text.",
+      "id": "REQ-14",
+      "summary": "Add a rickroll easter egg by making a single visible word clickable that redirects to the specified YouTube URL.",
       "acceptanceCriteria": [
-        "Global background reads as a lighter, vibrant pink; primary UI surfaces (cards/containers/header surfaces) read as a darker pink.",
-        "Default text across the page renders as white on the pink UI.",
-        "The footer area includes \"moms_of_ momland.inc\" and joke copyright notes, and those specific texts are not white (but remain readable and consistent with the design)."
+        "There is a clearly identifiable single word somewhere in the UI that is clickable.",
+        "Clicking the word navigates to https://www.youtube.com/watch?v=dQw4w9WgXcQ (either same-tab navigation or opening a new tab is acceptable, but it must clearly redirect to that URL)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Replace the current warm orange/coral CSS variable theme with a vibrant pink palette: lighter vibrant pink for --background, darker pink for key surfaces (e.g., --card/--popover/--secondary), and set default text variables (e.g., --foreground, --card-foreground) to white; ensure no blue/purple-dominant colors are introduced."
-        },
-        {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Ensure key UI surfaces (header strip, cards/containers) read as darker pink and default text reads as white under the updated theme; add footer content including the exact text \"moms_of_ momland.inc\" and joke copyright notes, styling those specific footer texts to be non-white yet readable and consistent with the design. Continue using shadcn-ui components already present (Card/Badge/Button) for surfaces where applicable; verify the component's usage instructions before implementing."
+          "description": "Introduce a single clearly identifiable clickable word in existing UI copy (no new routes/pages) that navigates to https://www.youtube.com/watch?v=dQw4w9WgXcQ (same-tab or new-tab allowed) while maintaining the single-page joke experience."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add a small styling treatment for the rickroll word (e.g., link-like affordance consistent with the retro theme) to make it discoverable without disrupting layout or existing theme tokens."
         }
       ]
     }

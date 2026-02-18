@@ -94,11 +94,11 @@
     
     body {
         @apply bg-background text-foreground;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Catamaran', Arial, Helvetica, sans-serif;
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Catamaran', Arial, Helvetica, sans-serif;
         font-weight: 700;
         letter-spacing: 0;
     }
@@ -140,5 +140,78 @@
         100% {
             background-position: -200% 0;
         }
+    }
+    
+    /* Retro low-res treatment */
+    .retro-pixelated {
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+    }
+    
+    .retro-scanlines::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.03) 0px,
+            rgba(0, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px
+        );
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    /* Cartoonish letter animation */
+    .letter-bounce {
+        display: inline-block;
+        animation: letter-jump 1.5s ease-in-out infinite;
+    }
+    
+    @keyframes letter-jump {
+        0%, 100% {
+            transform: translateY(0) scaleY(1);
+        }
+        25% {
+            transform: translateY(-8px) scaleY(1.1);
+        }
+        50% {
+            transform: translateY(0) scaleY(0.95);
+        }
+        75% {
+            transform: translateY(-4px) scaleY(1.05);
+        }
+    }
+    
+    .heading-display {
+        font-family: 'Fredoka', 'Catamaran', Arial, sans-serif;
+        font-weight: 700;
+    }
+    
+    /* Retro sidebar boxes */
+    .retro-box {
+        border: 2px solid oklch(var(--border));
+        box-shadow: 
+            2px 2px 0 oklch(var(--border)),
+            inset 1px 1px 0 oklch(0.75 0.16 340);
+    }
+    
+    /* Rickroll link styling */
+    .rickroll-link {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-underline-offset: 2px;
+        transition: all 0.2s;
+    }
+    
+    .rickroll-link:hover {
+        color: oklch(0.5 0.2 340);
+        text-decoration-style: solid;
     }
 }
