@@ -1,14 +1,22 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 7,
+  "projectStateVersion": 15,
   "summary": "Build a joke website named “your_mom’s_website”.",
   "architectural_notes": [
     "Add a top banner area that supports a cropped stock-photo image (license/attribution considerations).",
     "Implement an infinite, slow CSS gloss animation for the main heading text.",
     "Catull is a licensed typeface; use a legally permitted Catull-like substitute (e.g., free web font) for the “older Google logo” feel.",
-    "Implement low-res/pixelated look via CSS techniques (filters/rendering settings) without breaking readability/accessibility."
+    "Implement low-res/pixelated look via CSS techniques (filters/rendering settings) without breaking readability/accessibility.",
+    "Expand dated-web aesthetic target range to ~2005–2012 (older site structure patterns, YouTube-like layout).",
+    "Ensure the low-res treatment specifically evokes a ~480p presentation (coarse imagery/UI treatment) while maintaining usability/readability.",
+    "Add an iOS 4 Safari-style scroll indicator/side scroller treatment (visual mimic; ensure usability/accessibility).",
+    "Introduce a glassy UI treatment (blur/translucency/highlights) while preserving the retro 2005–2012 YouTube-like layout and readability.",
+    "When selecting/randomizing YouTube videos for “moms kitchen”, filter to cooking content and enforce a published-date range of 2011–2026.",
+    "Add a subtle early-2000s-style loading spinner (pink-themed) as a nostalgic UI detail; keep it unobtrusive and consistent with the retro portal aesthetic."
   ],
-  "known_issues": [],
+  "known_issues": [
+    "In the current build, the “moms kitchen” videos and the featured buttons are non-interactive / do nothing."
+  ],
   "isFixRequest": false,
   "existing_features": [
     {
@@ -122,6 +130,62 @@
         "REQ-14"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-homepage-layout-and-ui-styling-to-more-strongly-reflect-common-website-structures-from-2005-2012-youtube-like-emphasizing-dated-web-conventions-e-g-denser-page-chrome-more-boxy-modules-stronger-borders-dividers-and-a-more-old-web-portal-feel-while-keeping-the-app-as-a-single-page-joke-experience",
+      "title": "Update the homepage layout and UI styling to more strongly reflect common website structures from ~2005–2012 (YouTube-like), emphasizing dated web conventions (e.g., denser page chrome, more boxy modules, stronger borders/dividers, and a more ‘old web portal’ feel) while keeping the app as a single-page joke experience.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enforce-an-intentional-480p-low-resolution-presentation-across-the-site-so-the-overall-ui-feels-like-it-is-being-viewed-in-a-constrained-older-resolution-frame-around-854-480-while-keeping-all-text-readable-and-the-site-fully-usable-on-modern-screens",
+      "title": "Enforce an intentional “480p / low-resolution” presentation across the site so the overall UI feels like it is being viewed in a constrained, older-resolution frame (around 854×480), while keeping all text readable and the site fully usable on modern screens.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-ios-4-safari-style-scroll-indicator-side-scroller-for-the-main-scrollable-area-inside-the-480p-portal-frame-the-element-currently-using-overflow-y-auto-in-frontend-src-app-tsx-so-that-when-the-user-scrolls-a-thin-rounded-vertical-indicator-appears-near-the-right-edge-tracks-scroll-position-and-fades-out-after-scrolling-stops",
+      "title": "Implement an iOS 4 Safari-style scroll indicator (“side scroller”) for the main scrollable area inside the 480p portal frame (the element currently using `overflow-y-auto` in `frontend/src/App.tsx`), so that when the user scrolls, a thin rounded vertical indicator appears near the right edge, tracks scroll position, and fades out after scrolling stops.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-portal-ui-styling-to-have-a-glassy-ios-style-glassmorphism-look-while-preserving-the-existing-pink-theme-tokens-and-the-2005-2012-portal-layout-structure-modules-header-nav-and-inset-boxes-should-read-as-semi-translucent-glass-surfaces-with-subtle-blur-highlights-and-crisp-borders",
+      "title": "Update the portal UI styling to have a glassy iOS-style (glassmorphism) look while preserving the existing pink theme tokens and the 2005–2012 portal layout structure (modules, header, nav, and inset boxes should read as semi-translucent glass surfaces with subtle blur, highlights, and crisp borders).",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-curated-youtube-video-list-used-by-the-mom-s-kitchen-sidebar-so-that-it-only-contains-cooking-baking-related-videos-not-music-songs-and-every-video-in-the-list-is-from-youtube-and-was-posted-within-the-year-range-2011-through-2026-inclusive",
+      "title": "Update the curated YouTube video list used by the “Mom's Kitchen” sidebar so that it only contains cooking/baking-related videos (not music/songs) and every video in the list is from YouTube and was posted within the year range 2011 through 2026 (inclusive).",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-currently-non-functional-ui-elements-in-the-header-area-including-the-upload-button-account-button-and-the-navigation-tab-buttons-like-videos-featured-popular-perform-a-harmless-clearly-visible-interaction-when-clicked-and-ensure-the-mom-s-kitchen-video-embeds-are-actually-interactable-by-the-user-playback-controls-and-click-interactions-work-as-expected",
+      "title": "Make the currently non-functional UI elements in the header area (including the Upload button, Account button, and the navigation tab buttons like Videos/Featured/Popular) perform a harmless, clearly visible interaction when clicked, and ensure the “Mom's Kitchen” video embeds are actually interactable by the user (playback controls and click interactions work as expected).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-subtle-early-2000s-style-loading-spinner-that-matches-the-existing-vibrant-pink-theme-and-low-res-retro-aesthetic-and-show-it-briefly-on-initial-app-load-within-the-480p-portal-frame",
+      "title": "Add a subtle, early-2000s-style loading spinner that matches the existing vibrant pink theme and low-res/retro aesthetic, and show it briefly on initial app load within the 480p portal frame.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -188,6 +252,36 @@
     {
       "id": "AR-11",
       "summary": "Add a rickroll easter egg: a specific clickable word redirects to Rick Astley’s “Never Gonna Give You Up” on YouTube.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Broaden the retro UI target to mimic older website structures from ~2005–2012 (YouTube-like) and constrain the overall visual presentation to a 480p/low-resolution look.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Add a side scroller/scrollbar visual treatment that mimics iOS 4 Safari.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Update the UI styling to have a glassy (iOS-style/glassmorphism) look.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Constrain “moms kitchen” sidebar video selections to cooking videos (not songs) from YouTube posted within 2011–2026.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Add a subtle early-2000s-style loading spinner (pink-themed) as a throwback detail.",
       "reqIds": [],
       "status": "pending"
     }

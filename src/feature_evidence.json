@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-adjust-the-overall-visual-treatment-to-feel-intentionally-lower-resolution-early-2010s-by-applying-subtle-pixelated-low-res-styling-across-the-page-while-keeping-all-text-readable-and-the-site-fully-usable",
-      "featureTitle": "Adjust the overall visual treatment to feel intentionally lower-resolution / early-2010s by applying subtle pixelated/low-res styling across the page (while keeping all text readable and the site fully usable).",
+      "featureId": "feature-add-a-subtle-early-2000s-style-loading-spinner-that-matches-the-existing-vibrant-pink-theme-and-low-res-retro-aesthetic-and-show-it-briefly-on-initial-app-load-within-the-480p-portal-frame",
+      "featureTitle": "Add a subtle, early-2000s-style loading spinner that matches the existing vibrant pink theme and low-res/retro aesthetic, and show it briefly on initial app load within the 480p portal frame.",
       "files": [
         "frontend/src/App.tsx",
+        "frontend/src/components/InitialLoadSpinner.tsx",
         "frontend/src/index.css"
       ],
       "components": [
@@ -16,104 +17,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-9"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-global-typography-so-that-all-site-text-uses-a-catull-style-typeface-use-a-legally-usable-free-substitute-if-catull-cannot-be-embedded-and-update-the-main-heading-to-use-a-more-cartoonish-display-feel-while-still-fitting-the-early-2010s-aesthetic",
-      "featureTitle": "Update global typography so that all site text uses a Catull-style typeface (use a legally usable free substitute if Catull cannot be embedded), and update the main heading to use a more cartoonish display feel while still fitting the early-2010s aesthetic.",
-      "files": [
-        "frontend/index.html",
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-10"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-change-the-displayed-main-header-text-to-remove-underscores-while-keeping-the-existing-browser-tab-title-as-your-mom-s-website-and-animate-the-header-so-each-letter-performs-a-small-cartoonish-jump-and-squash-loop-or-staggered-loop-without-impacting-layout-flow",
-      "featureTitle": "Change the displayed main header text to remove underscores (while keeping the existing browser tab title as “your_mom’s_website”), and animate the header so each letter performs a small cartoonish jump-and-squash loop (or staggered loop) without impacting layout flow.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-11"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-an-early-2010s-style-sidebar-area-with-small-ui-boxes-that-embed-mom-themed-cooking-baking-youtube-videos-the-selected-videos-must-be-randomized-so-different-visits-can-show-different-video-selections",
-      "featureTitle": "Add an early-2010s-style sidebar area with small UI boxes that embed mom-themed cooking/baking YouTube videos; the selected videos must be randomized so different visits can show different video selections.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/index.css",
-        "frontend/src/lib/momMedia.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-12"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-an-early-2010s-style-sidebar-area-with-small-ui-boxes-showing-mom-written-articles-title-short-snippet-source-link-the-selected-articles-must-be-randomized-so-different-visits-can-show-different-article-selections",
-      "featureTitle": "Add an early-2010s-style sidebar area with small UI boxes showing mom-written articles (title + short snippet + source link); the selected articles must be randomized so different visits can show different article selections.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/lib/momMedia.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-13"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-rickroll-easter-egg-a-specific-visible-word-on-the-page-must-be-clickable-and-redirect-the-user-to-rick-astley-s-never-gonna-give-you-up-on-youtube-https-www-youtube-com-watch-v-dqw4w9wgxcq",
-      "featureTitle": "Add a rickroll easter egg: a specific visible word on the page must be clickable and redirect the user to Rick Astley’s “Never Gonna Give You Up” on YouTube (https://www.youtube.com/watch?v=dQw4w9WgXcQ).",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/index.css"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-14"
+        "REQ-21"
       ],
       "confidence": "high"
     }

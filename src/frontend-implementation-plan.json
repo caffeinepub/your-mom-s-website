@@ -1,138 +1,33 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Retro low-res styling, Catull-like typography, animated header letters, randomized mom-media sidebar, and rickroll easter egg",
+  "title": "Early-2000s pink initial-load spinner inside portal frame",
   "requirements": [
     {
-      "id": "REQ-9",
-      "summary": "Apply a consistent subtle low-res/early-2010s retro treatment across the single-page UI without harming readability or the existing pink theme.",
+      "id": "REQ-21",
+      "summary": "Show a brief, subtle retro pink loading spinner on initial app load, contained within the 480p portal frame without layout shift or backend changes.",
       "acceptanceCriteria": [
-        "The page has a noticeably more low-res/retro treatment than the current version (e.g., pixelation on decorative elements, slightly aliased edges, and/or reduced-smoothness effects), without harming readability or layout stability.",
-        "The effect is applied consistently across the single-page experience and does not break the existing pink theme, banner, cards, or footer."
+        "On first page load, a small pink spinner is visible for a short, fixed duration (e.g., ~400–1200ms) and then disappears automatically.",
+        "The spinner styling reads as early-2000s/retro (simple shape, slightly pixelated/low-res feel) and does not introduce a blue/purple color theme.",
+        "The spinner is visually contained within the portal frame UI (not full-screen over the entire browser), and it does not shift layout when it appears/disappears.",
+        "The spinner overlay does not block interaction longer than necessary; after it disappears, all existing UI elements behave as before.",
+        "No backend changes are introduced."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add global retro/low-res utilities (e.g., subtle scanline/dither overlay via a non-interactive pseudo-element, slightly harsher/aliased decorative edges, and optional pixelated rendering for decorative images/icons only) while keeping text crisp/readable and preserving existing vibrant pink theme tokens and the footer non-white text exception."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Apply new retro utility classes at the app shell/root and on decorative assets (banner/mascot/badge images) to ensure the low-res treatment is visible but does not affect layout stability or text readability. Use existing shadcn-ui composition (Card/Badge/Button) only; verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "summary": "Set global Catull-style typography (via a free substitute) and update the main heading typography to a more cartoonish display style that still fits the early-2010s aesthetic.",
-      "acceptanceCriteria": [
-        "Body text, headings, and UI text render using the chosen Catull-style font (or a clearly similar free substitute) across the app.",
-        "The main header text visually reads as more cartoonish than before, while remaining legible at small sizes."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Add font loading for a legally usable free Catull-style substitute (site-wide) plus a cartoonish display font (for the main heading) using standard web font loading in the HTML head, without changing the existing tab title."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Update global typography to use the chosen Catull-style substitute for body/headings and a separate display font for the main header (via CSS variables and/or Tailwind base styles), ensuring legibility and preserving the existing pink theme and footer styling exception."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend Tailwind fontFamily configuration to expose the new body and display fonts as utilities/classes, keeping existing theme tokens intact."
-        }
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "summary": "Update the on-page main header text to remove underscores and animate each letter with a looping cartoonish jump-and-squash without reflow; keep browser tab title unchanged.",
-      "acceptanceCriteria": [
-        "The on-page header no longer shows underscores in the displayed text.",
-        "The browser tab title remains “your_mom’s_website”.",
-        "Each character in the displayed header has a visible jump/squash animation (can be staggered per-letter) that loops smoothly and does not cause the header to reflow or shift surrounding elements."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Replace the header H1 text rendering with a per-character span layout (underscores removed in displayed text) using inline-flex and fixed line-height to prevent layout shift; apply staggered animation delays per character. Use existing shadcn-ui composition only; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add keyframes and utility/classes for the per-letter jump-and-squash loop (transform-only animation to avoid reflow), plus a wrapper style that preserves the existing heading gloss effect while allowing the new display font."
-        }
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "summary": "Add an early-2010s-style sidebar section with multiple small boxes embedding randomized mom-themed cooking/baking YouTube videos using a safe browser-only approach.",
-      "acceptanceCriteria": [
-        "A sidebar (or side column on desktop, stacked section on mobile) contains multiple small boxes with embedded YouTube videos related to moms cooking/baking.",
-        "On page load, the set/order of videos is randomized from an internal list so that different visits can show different selections.",
-        "The embeds load safely in the browser (no backend required) and the page remains a single-page experience."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/lib/momMedia.ts",
+          "path": "frontend/src/components/InitialLoadSpinner.tsx",
           "operation": "create",
-          "description": "Add a curated internal list of mom-themed cooking/baking YouTube video IDs/URLs and helper utilities to select and shuffle a subset per visit (no runtime scraping; internal list only)."
+          "description": "Create a small, early-2000s-inspired retro spinner React component (chunky/pixelated look) that can be positioned as an overlay within the portal frame; keep it lightweight and theme-aligned (pink)."
         },
         {
           "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Adjust the main content layout to include a responsive sidebar (desktop side column, mobile stacked) and render multiple video embed cards selected randomly on initial load. Build the small UI boxes using shadcn-ui Card components; verify the component's usage instructions before implementing."
+          "description": "Wire the initial-load spinner into the existing single-page UI: add a short fixed-duration initial loading state (e.g., 800ms) on first mount and render the overlay inside the portal-frame/scroll container area using absolute positioning so it remains contained within the 480p portal frame and does not cause layout shift; ensure the overlay uses minimal/no pointer-event blocking and fully unmounts after the timer."
         },
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Add retro sidebar/card styling helpers to evoke early-2010s UI boxes (e.g., tighter borders, subtle shadows, and slight ‘web 2.0’ chrome) while preserving the existing vibrant pink theme."
-        }
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "summary": "Add an early-2010s-style sidebar section with multiple small randomized mom-written article cards (title, snippet, source link) opening safely in new tabs.",
-      "acceptanceCriteria": [
-        "A sidebar section contains multiple small article cards/boxes with a title, short snippet, and an outbound link.",
-        "On page load, the set/order of articles is randomized from an internal list so that different visits can show different selections.",
-        "Article links open in a new tab with appropriate rel attributes (noopener/noreferrer)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/lib/momMedia.ts",
-          "operation": "modify",
-          "description": "Add a curated internal list of mom-written articles (title/snippet/url/source label) and reuse the same shuffle/subset helper for randomized selection per visit."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Render a second sidebar section for article cards (title + snippet + outbound link) using shadcn-ui Card components, ensuring links open in a new tab with rel=\"noopener noreferrer\". Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "summary": "Add a rickroll easter egg by making a single visible word clickable that redirects to the specified YouTube URL.",
-      "acceptanceCriteria": [
-        "There is a clearly identifiable single word somewhere in the UI that is clickable.",
-        "Clicking the word navigates to https://www.youtube.com/watch?v=dQw4w9WgXcQ (either same-tab navigation or opening a new tab is acceptable, but it must clearly redirect to that URL)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Introduce a single clearly identifiable clickable word in existing UI copy (no new routes/pages) that navigates to https://www.youtube.com/watch?v=dQw4w9WgXcQ (same-tab or new-tab allowed) while maintaining the single-page joke experience."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Add a small styling treatment for the rickroll word (e.g., link-like affordance consistent with the retro theme) to make it discoverable without disrupting layout or existing theme tokens."
+          "description": "Add CSS for the retro pink spinner and its container overlay (e.g., pixel/stepped animation, chunky dots, subtle translucent backing) using existing theme variables so it stays vibrant-pink and low-res/retro; ensure styles are scoped via new class names and do not affect global layout."
         }
       ]
     }

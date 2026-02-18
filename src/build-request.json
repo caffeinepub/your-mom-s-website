@@ -1,141 +1,40 @@
 {
   "kind": "build_request",
-  "title": "Add low-res retro styling, Catull-like typography, animated heading letters, randomized mom media sidebar, and rickroll easter egg",
+  "title": "Add early-2000s pink loading spinner",
   "projectName": "your_mom’s_website",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-9",
-      "text": "Adjust the overall visual treatment to feel intentionally lower-resolution / early-2010s by applying subtle pixelated/low-res styling across the page (while keeping all text readable and the site fully usable).",
+      "id": "REQ-21",
+      "text": "Add a subtle, early-2000s-style loading spinner that matches the existing vibrant pink theme and low-res/retro aesthetic, and show it briefly on initial app load within the 480p portal frame.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-user-1"
+          "msg-4"
         ],
         "quotes": [
-          "Make it a bit lower resolution to mimic early 2010’s feel"
+          "Sure! You can do a subtle loading spinner, you can make it pink or something. Sorta like the early 2000’s atat one"
         ]
       },
       "acceptanceCriteria": [
-        "The page has a noticeably more low-res/retro treatment than the current version (e.g., pixelation on decorative elements, slightly aliased edges, and/or reduced-smoothness effects), without harming readability or layout stability.",
-        "The effect is applied consistently across the single-page experience and does not break the existing pink theme, banner, cards, or footer."
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "text": "Update global typography so that all site text uses a Catull-style typeface (use a legally usable free substitute if Catull cannot be embedded), and update the main heading to use a more cartoonish display feel while still fitting the early-2010s aesthetic.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-user-1"
-        ],
-        "quotes": [
-          "All text font should be the kind that was used in google’s older logo from the 2000’s: Catull typeface.",
-          "make heading font cartoonish"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Body text, headings, and UI text render using the chosen Catull-style font (or a clearly similar free substitute) across the app.",
-        "The main header text visually reads as more cartoonish than before, while remaining legible at small sizes."
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "text": "Change the displayed main header text to remove underscores (while keeping the existing browser tab title as “your_mom’s_website”), and animate the header so each letter performs a small cartoonish jump-and-squash loop (or staggered loop) without impacting layout flow.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-user-1"
-        ],
-        "quotes": [
-          "get rid of the underscores on the “your_mom’s_website” header, give each letter of it, a small cartoonish jump and squash animation."
-        ]
-      },
-      "acceptanceCriteria": [
-        "The on-page header no longer shows underscores in the displayed text.",
-        "The browser tab title remains “your_mom’s_website”.",
-        "Each character in the displayed header has a visible jump/squash animation (can be staggered per-letter) that loops smoothly and does not cause the header to reflow or shift surrounding elements."
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "text": "Add an early-2010s-style sidebar area with small UI boxes that embed mom-themed cooking/baking YouTube videos; the selected videos must be randomized so different visits can show different video selections.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-user-1"
-        ],
-        "quotes": [
-          "And add YouTube videos of moms baking and cooking recipes from moms, on little side ui boxes.  And some articles written by moms about things, too.  These are completely randomized from the internet and are different"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A sidebar (or side column on desktop, stacked section on mobile) contains multiple small boxes with embedded YouTube videos related to moms cooking/baking.",
-        "On page load, the set/order of videos is randomized from an internal list so that different visits can show different selections.",
-        "The embeds load safely in the browser (no backend required) and the page remains a single-page experience."
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "text": "Add an early-2010s-style sidebar area with small UI boxes showing mom-written articles (title + short snippet + source link); the selected articles must be randomized so different visits can show different article selections.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-user-1"
-        ],
-        "quotes": [
-          "And some articles written by moms about things, too.  These are completely randomized from the internet and are different"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A sidebar section contains multiple small article cards/boxes with a title, short snippet, and an outbound link.",
-        "On page load, the set/order of articles is randomized from an internal list so that different visits can show different selections.",
-        "Article links open in a new tab with appropriate rel attributes (noopener/noreferrer)."
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "text": "Add a rickroll easter egg: a specific visible word on the page must be clickable and redirect the user to Rick Astley’s “Never Gonna Give You Up” on YouTube (https://www.youtube.com/watch?v=dQw4w9WgXcQ).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-user-1"
-        ],
-        "quotes": [
-          "add a rickroll somewhere in there. Make a certain word, if clicked on, will redirect the user to a youtube video of rick ashley’s never gonna give you up."
-        ]
-      },
-      "acceptanceCriteria": [
-        "There is a clearly identifiable single word somewhere in the UI that is clickable.",
-        "Clicking the word navigates to https://www.youtube.com/watch?v=dQw4w9WgXcQ (either same-tab navigation or opening a new tab is acceptable, but it must clearly redirect to that URL)."
+        "On first page load, a small pink spinner is visible for a short, fixed duration (e.g., ~400–1200ms) and then disappears automatically.",
+        "The spinner styling reads as early-2000s/retro (simple shape, slightly pixelated/low-res feel) and does not introduce a blue/purple color theme.",
+        "The spinner is visually contained within the portal frame UI (not full-screen over the entire browser), and it does not shift layout when it appears/disappears.",
+        "The spinner overlay does not block interaction longer than necessary; after it disappears, all existing UI elements behave as before.",
+        "No backend changes are introduced."
       ]
     }
   ],
   "constraints": [
-    "Frontend must remain a single-page joke experience (no multi-page routing required).",
-    "Do not edit files under frontend/src/components/ui (compose these components only).",
-    "Do not modify immutable paths listed in SYSTEM_CONTEXT.frontend.immutablePaths.",
-    "Keep the existing vibrant pink theme and footer non-white text exception intact.",
-    "Backend is currently an empty single Motoko actor; no backend changes are required for these requests."
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, and anything under frontend/src/components/ui.",
+    "Keep the app as a single-page joke experience and preserve the existing pink + retro portal aesthetic."
   ],
   "nonGoals": [
-    "Implementing true web-wide scraping/crawling to discover videos/articles dynamically at runtime.",
-    "Adding real-time updates, websockets, chat, push notifications, or email/SMS integrations.",
-    "Adding non-Internet-Identity third-party authentication providers.",
-    "Adding a database or external storage layer."
+    "Implementing real network/request-based loading states for data fetching (the spinner may be purely cosmetic/initial-load only).",
+    "Adding or changing backend canister state, methods, or schema."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
   }
 }

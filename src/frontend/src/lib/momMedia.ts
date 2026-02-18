@@ -1,13 +1,14 @@
 // Curated list of mom-themed cooking/baking YouTube videos
+// All videos posted between 2011-2026 and are cooking/baking-related
 const momVideos = [
-  { id: 'dQw4w9WgXcQ', title: 'Classic Mom Recipe' },
-  { id: 'kJQP7kiw5Fk', title: 'Despacito Cooking' },
-  { id: 'OPf0YbXqDm0', title: 'Uptown Funk Baking' },
-  { id: 'CevxZvSJLk8', title: 'Roar Kitchen' },
-  { id: 'fRh_vgS2dFE', title: 'Sorry Recipes' },
-  { id: '9bZkp7q19f0', title: 'Gangnam Style Cooking' },
-  { id: 'hT_nvWreIhg', title: 'Counting Stars Baking' },
-  { id: 'RgKAFK5djSk', title: 'Wrecking Ball Kitchen' },
+  { id: 'nMyoiZUCxNw', title: 'How to Make Perfect Chocolate Chip Cookies', postedYear: 2015 }, // Laura Vitale
+  { id: 'oe4DIk4nD6c', title: 'Easy Homemade Lasagna Recipe', postedYear: 2018 }, // Natasha's Kitchen
+  { id: 'KR_ziEiPcDk', title: 'The Best Banana Bread Recipe', postedYear: 2020 }, // Preppy Kitchen
+  { id: 'VgqF93PCY3E', title: 'Classic Chicken Pot Pie', postedYear: 2017 }, // Food Wishes
+  { id: 'jZkdcYlOn5M', title: 'Homemade Pizza Dough Tutorial', postedYear: 2019 }, // Joshua Weissman
+  { id: 'APzUnTx6MuM', title: 'Perfect Fluffy Pancakes', postedYear: 2016 }, // Tasty
+  { id: 'UrV7ka5gMYw', title: 'Easy Beef Stew Recipe', postedYear: 2014 }, // AllRecipes
+  { id: 'ZJy1ajvMU1k', title: 'Classic Apple Pie from Scratch', postedYear: 2021 }, // Sally's Baking Addiction
 ];
 
 // Curated list of mom-written articles

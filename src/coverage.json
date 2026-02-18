@@ -1,95 +1,28 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-18T03:36:15.368Z",
+  "generatedAt": "2026-02-18T04:17:12.765Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 6,
-    "implemented": 6,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
-        "id": "REQ-10",
-        "summary": "Update global typography so that all site text uses a Catull-style typeface (use a legally usable free substitute if Catull cannot be embedded), and update the main heading to use a more cartoonish display feel while still fitting the early-2010s aesthetic.",
+        "id": "REQ-21",
+        "summary": "Add a subtle, early-2000s-style loading spinner that matches the existing vibrant pink theme and low-res/retro aesthetic, and show it briefly on initial app load within the 480p portal frame.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/index.html",
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
-        ],
-        "matchedFiles": [
-          "frontend/index.html",
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
-        ]
-      },
-      {
-        "id": "REQ-11",
-        "summary": "Change the displayed main header text to remove underscores (while keeping the existing browser tab title as “your_mom’s_website”), and animate the header so each letter performs a small cartoonish jump-and-squash loop (or staggered loop) without impacting layout flow.",
-        "status": "implemented",
-        "plannedFiles": [
+          "frontend/src/components/InitialLoadSpinner.tsx",
           "frontend/src/App.tsx",
           "frontend/src/index.css"
         ],
         "matchedFiles": [
+          "frontend/src/components/InitialLoadSpinner.tsx",
           "frontend/src/App.tsx",
           "frontend/src/index.css"
-        ]
-      },
-      {
-        "id": "REQ-12",
-        "summary": "Add an early-2010s-style sidebar area with small UI boxes that embed mom-themed cooking/baking YouTube videos; the selected videos must be randomized so different visits can show different video selections.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/lib/momMedia.ts",
-          "frontend/src/App.tsx",
-          "frontend/src/index.css"
-        ],
-        "matchedFiles": [
-          "frontend/src/lib/momMedia.ts",
-          "frontend/src/App.tsx",
-          "frontend/src/index.css"
-        ]
-      },
-      {
-        "id": "REQ-13",
-        "summary": "Add an early-2010s-style sidebar area with small UI boxes showing mom-written articles (title + short snippet + source link); the selected articles must be randomized so different visits can show different article selections.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/lib/momMedia.ts",
-          "frontend/src/App.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/lib/momMedia.ts",
-          "frontend/src/App.tsx"
-        ]
-      },
-      {
-        "id": "REQ-14",
-        "summary": "Add a rickroll easter egg: a specific visible word on the page must be clickable and redirect the user to Rick Astley’s “Never Gonna Give You Up” on YouTube (https://www.youtube.com/watch?v=dQw4w9WgXcQ).",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/App.tsx",
-          "frontend/src/index.css"
-        ],
-        "matchedFiles": [
-          "frontend/src/App.tsx",
-          "frontend/src/index.css"
-        ]
-      },
-      {
-        "id": "REQ-9",
-        "summary": "Adjust the overall visual treatment to feel intentionally lower-resolution / early-2010s by applying subtle pixelated/low-res styling across the page (while keeping all text readable and the site fully usable).",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/index.css",
-          "frontend/src/App.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/index.css",
-          "frontend/src/App.tsx"
         ]
       }
     ]
@@ -99,11 +32,9 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/index.html",
     "frontend/src/App.tsx",
+    "frontend/src/components/InitialLoadSpinner.tsx",
     "frontend/src/index.css",
-    "frontend/src/lib/momMedia.ts",
-    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

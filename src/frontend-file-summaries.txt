@@ -1,7 +1,11 @@
 {
-  "frontend/src/App.tsx": "Main single-page joke website with early-2010s aesthetic, animated header letters (no underscores), responsive sidebar with randomized mom cooking videos and articles, rickroll easter egg on \"amazing\" word, and retro low-res treatment throughout.",
-  "frontend/src/index.css": "Global styles with vibrant pink OKLCH theme, Catamaran typography, retro low-res utilities (pixelation, scanlines), cartoonish letter-jump animation, retro sidebar box styling, and rickroll link affordance.",
-  "frontend/tailwind.config.js": "Tailwind configuration with Catamaran body font, Fredoka display font, minimal border radius, and custom color tokens for the vibrant pink theme.",
-  "frontend/src/lib/momMedia.ts": "Utility module providing curated lists of mom-themed YouTube cooking videos and mom-written articles with shuffle helpers for randomized selection on page load.",
-  "frontend/index.html": "HTML entry point with Catamaran (Catull-style substitute) and Fredoka (cartoonish display) font loading from Google Fonts; browser tab title remains \"your_mom's_website\"."
+  "frontend/src/App.tsx": "Main single-page joke website with 2005-2012 portal-style layout, glassmorphism treatment, interactive header buttons/tabs with feedback notices, Mom's Kitchen cooking videos, sidebar content, rickroll easter egg, and brief initial-load retro pink spinner (800ms).",
+  "frontend/src/index.css": "Global styles with vibrant pink OKLCH theme, comprehensive glassmorphism utilities, iOS 4 scroll indicator styles, portal-specific color tokens, 480p frame styling, boxy module system, retro low-res utilities, letter-jump animation, header notice animations, video container interaction styles, and early-2000s retro pink spinner with chunky pixelated dots and stepped animation.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Catamaran body font, Fredoka display font, zero border radius for boxy 2000s aesthetic, and custom color tokens for the vibrant pink theme.",
+  "frontend/src/lib/momMedia.ts": "Utility module providing curated lists of cooking/baking YouTube videos (posted 2011-2026) and mom-written articles with shuffle helpers for randomized selection on page load.",
+  "frontend/index.html": "HTML entry point with Catamaran (Catull-style substitute) and Fredoka (cartoonish display) font loading from Google Fonts; browser tab title remains \"your_mom's_website\".",
+  "frontend/src/hooks/useIosScrollIndicator.ts": "Custom React hook that tracks scroll position and calculates iOS 4-style scroll indicator geometry (thumb height/position) with auto-fade after 1 second of inactivity, accepting nullable HTMLElement refs.",
+  "frontend/src/components/IosScrollIndicator.tsx": "Presentational component that renders the iOS 4 Safari-style thin rounded scroll indicator overlay with pointer-events: none to avoid blocking interactions.",
+  "frontend/src/components/HeaderClickNotice.tsx": "Reusable notice component that displays a timed message banner at the top of the page with auto-dismiss after 3 seconds and manual close button.",
+  "frontend/src/components/InitialLoadSpinner.tsx": "Early-2000s style retro pink loading spinner component with 8 chunky pixelated dots arranged in a circle, animated with stepped opacity/scale changes for a nostalgic low-res aesthetic."
 }

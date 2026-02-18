@@ -1,14 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Refresh the single-page joke site with an intentionally low-res early-2010s aesthetic, Catull-like typography, an animated main heading, randomized “mom media” sidebar content, and a rickroll easter egg.
+**Goal:** Add a brief, subtle early-2000s-style pink loading spinner on initial app load that fits the existing retro portal aesthetic.
 
 **Planned changes:**
-- Apply a subtle, consistent low-res/retro visual treatment across the page without reducing readability or breaking the existing pink theme, layout, banner, cards, or footer.
-- Update global typography to a Catull-style font (or a legally usable free substitute) and make the main heading use a more cartoonish display style that still fits the early-2010s vibe.
-- Change the on-page main header text to remove underscores (keep the browser tab title as “your_mom’s_website”) and animate each letter with a looping jump-and-squash effect without causing layout reflow.
-- Add an early-2010s-style sidebar/side column (stacking on mobile) containing small UI boxes with embedded mom-themed cooking/baking YouTube videos, randomized per visit from an internal list.
-- Add a matching sidebar section with small mom-article cards (title, snippet, source link), randomized per visit from an internal list, with links opening in a new tab using appropriate rel attributes.
-- Add a rickroll easter egg by making a single clearly identifiable word clickable to redirect to https://www.youtube.com/watch?v=dQw4w9WgXcQ.
+- Add a small pink, retro/low-res styled spinner overlay that appears only on first page load for a short fixed duration (~400–1200ms) and then auto-hides.
+- Ensure the spinner is visually contained within the 480p portal frame UI (not full-screen) and does not cause layout shifts when shown/hidden.
+- Ensure the spinner does not block interaction longer than necessary and the rest of the UI behaves the same after it disappears.
 
-**User-visible outcome:** The page looks more intentionally retro and low-res, uses Catull-like typography, shows an animated underscore-free heading, includes a randomized sidebar of mom videos and articles, and contains a clickable word that rickrolls the user.
+**User-visible outcome:** On first visiting/loading the page, users briefly see a small pink retro spinner inside the portal frame, then the normal experience continues unchanged.
